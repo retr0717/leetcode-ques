@@ -21,3 +21,16 @@ int main() {
   cout << sol.singleNumber(nums) << "\n";
   return 0;
 }
+
+/*
+concept of XOR:
+xor of same no result in 0.
+a ^ a = 0
+
+xor of 0 with any no is the no itself.
+a ^ 0 = a
+
+here the numbers having 2 occurence will become zero
+which will leave the single number left to be xor with 0
+which in turn will result in the single number itself.
+ */
