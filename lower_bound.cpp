@@ -24,5 +24,9 @@ int main() {
   vector<int> nums = {1, 2, 8, 10, 11, 12, 19};
   int target = 5;
   cout << s.LowerBound(nums, target) << endl;
+
+  // using stl.
+  int index = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+  cout << index << endl;
   return 0;
 }
