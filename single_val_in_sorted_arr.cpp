@@ -36,7 +36,7 @@ public:
 
 int main() {
 
-  Soluti Solution s;
+  Solution s;
   vector<int> nums = {1, 1, 2, 3, 3, 4, 4, 8, 8};
   cout << s.singleNonDuplicate(nums) << endl;
   return 0;

@@ -56,7 +56,7 @@ public:
 public:
   int MergeSort(vector<int> &arr, int low, int high) {
     int cnt = 0;
-    if (low <= high)
+    if (low >= high)
       return cnt;
 
     int mid = (low + high) / 2;
