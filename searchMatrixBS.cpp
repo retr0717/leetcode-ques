@@ -2,29 +2,22 @@
 #include <vector>
 using namespace std;
 
-bool findFirst(vector<int> &arr, int n, int x) {
-  int start = 0, end = n - 1, ans = -1;
-  while (start <= end) {
-    int mid = (start + end) / 2;
-    if (arr[mid] == x) {
-      ans = mid;
-      end = mid - 1;
-    } else if (x > arr[mid]) {
-      start = mid + 1;
-    } else {
-      end = mid - 1;
-    }
-  }
-
-  return ans > -1;
-}
-
 bool searchMatrix(vector<vector<int>> &mat, int target) {
 
-  for (int i = 0; i < mat.size(); i++) {
-    bool occ = findFirst(mat[i], mat[i].size(), target);
-    if (occ)
+  int start = 0;
+  int n = mat.size(), m = mat[0].size();
+  int end = (n * m) - 1;
+
+  while (start <= end) {
+    int mid = (start + end) / 2;
+    int row = mid / m;
+    int col = mid % m;
+    if (mat[row][col] == target)
       return true;
+    else if (mat[row][col] < target)
+      start = mid + 1;
+    else
+      end = mid - 1;
   }
 
   return false;
