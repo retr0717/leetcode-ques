@@ -32,5 +32,15 @@ int main() {
          << " | Next :: " << curr->next << " ||\n";
   }
 
+  int val = 6;
+  Node *newNode = new Node(val);
+  newNode->next = head;
+  head = newNode;
+
+  cout << "After adding new node at the beginning\n";
+  for (Node *curr = head; curr != nullptr; curr = curr->next) {
+    cout << " Node :: " << curr << " || Data :: " << curr->data
+         << " | Next :: " << curr->next << " ||\n";
+  }
   return 0;
 }
