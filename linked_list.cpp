@@ -29,6 +29,16 @@ int findLength(Node *head) {
   return len;
 }
 
+bool searchList(Node *head, int val) {
+  Node *curr = head;
+  while (curr != nullptr) {
+    if (curr->data == val)
+      return true;
+    curr = curr->next;
+  }
+  return false;
+}
+
 int main() {
   vector<int> v = {1, 2, 3, 4, 5};
   Node *head = new Node(v[0]);
@@ -59,5 +69,12 @@ int main() {
 
   len = findLength(head);
   cout << "Length of the linked list is : " << len << endl;
+
+  bool result = searchList(head, 4);
+  cout << "Search result for 4 is : " << result << endl;
+
+  result = searchList(head, 7);
+  cout << "Search result for 7 is : " << result << endl;
+
   return 0;
 }
