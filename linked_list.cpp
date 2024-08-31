@@ -18,6 +18,17 @@ public:
   }
 };
 
+int findLength(Node *head) {
+  int len = 0;
+  Node *curr = head;
+  while (curr != nullptr) {
+    len++;
+    curr = curr->next;
+  }
+
+  return len;
+}
+
 int main() {
   vector<int> v = {1, 2, 3, 4, 5};
   Node *head = new Node(v[0]);
@@ -32,6 +43,9 @@ int main() {
          << " | Next :: " << curr->next << " ||\n";
   }
 
+  int len = findLength(head);
+  cout << "Length of the linked list is : " << len << endl;
+
   int val = 6;
   Node *newNode = new Node(val);
   newNode->next = head;
@@ -42,5 +56,8 @@ int main() {
     cout << " Node :: " << curr << " || Data :: " << curr->data
          << " | Next :: " << curr->next << " ||\n";
   }
+
+  len = findLength(head);
+  cout << "Length of the linked list is : " << len << endl;
   return 0;
 }
