@@ -51,6 +51,23 @@ Node *deleteLastNode(Node *head) {
   return head;
 }
 
+Node *reverseDLL(Node *head) {
+  if (head == nullptr || head->next == nullptr)
+    return head;
+
+  while (head->next != nullptr) {
+    Node *next = head->next;
+    head->next = head->prev;
+    head->prev = next;
+    head = head->prev;
+  }
+
+  head->next = head->prev;
+  head->prev = nullptr;
+
+  return head;
+}
+
 int main() {
   vector<int> v = {1, 2, 3, 4, 5};
   Node *head = constructDLL(v);
