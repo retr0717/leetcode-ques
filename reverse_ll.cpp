@@ -18,6 +18,17 @@ public:
   }
 };
 
+Node *reverseLinkedListRecursion(Node *head) {
+  if (head == nullptr || head->next == nullptr)
+    return head;
+
+  Node *newHead = reverseLinkedListRecursion(head->next);
+  Node *front = head->next;
+  front->next = head;
+  head->next = nullptr;
+  return newHead;
+}
+
 Node *reverseLinkedList(Node *head) {
   Node *prev = nullptr;
   Node *temp = head;
