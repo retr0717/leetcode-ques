@@ -25,16 +25,14 @@ Node *deleteMiddle(Node *head) {
     return nullptr;
 
   Node *tortoise = head;
-  Node *hare = head;
-  Node *prev = head;
+  Node *hare = head->next->next;
 
   while (hare != nullptr && hare->next != nullptr) {
-    prev = tortoise;
     tortoise = tortoise->next;
     hare = hare->next->next;
   }
 
-  prev->next = tortoise->next;
+  tortoise->next = tortoise->next->next;
 
   return head;
 }
