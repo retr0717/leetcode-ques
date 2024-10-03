@@ -12,8 +12,19 @@ void bfPowersetofString(string s) {
   }
 }
 
+void powersetUsingRecursion(int i, string s, string f) {
+  if (i == s.length()) {
+    cout << f << endl;
+    return;
+  }
+  powersetUsingRecursion(i + 1, s, f);
+  powersetUsingRecursion(i + 1, s, f + s[i]);
+}
+
 int main() {
   string s = "abc";
+  bfPowersetofString(s);
+  cout << endl;
   bfPowersetofString(s);
   return 0;
 }
