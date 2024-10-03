@@ -17,7 +17,11 @@ void powersetUsingRecursion(int i, string s, string f) {
     cout << f << endl;
     return;
   }
+  cout << "powersetUsingRecursion(" << i + 1 << ", " << s << ", " << f << ")"
+       << endl;
   powersetUsingRecursion(i + 1, s, f);
+  cout << "powersetUsingRecursion(" << i + 1 << ", " << s << ", " << f + s[i]
+       << ")" << endl;
   powersetUsingRecursion(i + 1, s, f + s[i]);
 }
 
@@ -25,6 +29,6 @@ int main() {
   string s = "abc";
   bfPowersetofString(s);
   cout << endl;
-  bfPowersetofString(s);
+  powersetUsingRecursion(0, s, "");
   return 0;
 }
