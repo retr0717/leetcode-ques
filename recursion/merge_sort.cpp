@@ -2,16 +2,17 @@
 using namespace std;
 
 void merge(int left, int right, int mid, vector<int> &arr) {
-  int l = left, r = mid + 1;
+  int l = left;
+  int r = mid + 1;
   vector<int> temp;
 
-  while (l <= left && r <= right) {
-    if (arr[l] >= arr[r]) {
-      temp.push_back(arr[r]);
-      r++;
-    } else {
+  while (l <= mid && r <= right) {
+    if (arr[l] <= arr[r]) {
       temp.push_back(arr[l]);
       l++;
+    } else {
+      temp.push_back(arr[r]);
+      r++;
     }
   }
 
@@ -25,9 +26,8 @@ void merge(int left, int right, int mid, vector<int> &arr) {
     r++;
   }
 
-  while (left <= right) {
-    arr[left] = temp[left];
-    left++;
+  for (int i = left; i <= right; i++) {
+    arr[i] = temp[i - left];
   }
 }
 
@@ -41,7 +41,7 @@ void MerrgeSort(int left, int right, vector<int> &arr) {
 }
 
 int main() {
-  vector<int> arr = {1, 2, 1};
+  vector<int> arr = {3, 4, 1, 6, 2, 5, 7};
   vector<int> ans;
   int n = arr.size();
   int k = 2;
