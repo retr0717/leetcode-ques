@@ -1,27 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printfSubSequence(int index, vector<int> &arr, vector<int> &ds, int sum,
+bool printfSubSequence(int index, vector<int> &arr, vector<int> &ds, int sum,
                        int n, int k) {
   if (index == n) {
     if (sum == k) {
       for (auto x : ds)
         cout << x << " ";
       cout << endl;
+      return true;
     }
-    return;
+    return false;
   }
 
   ds.push_back(arr[index]);
   sum += arr[index];
-  printfSubSequence(index + 1, arr, ds, sum, n, k);
+
+  if (printfSubSequence(index + 1, arr, ds, sum, n, k) == true)
+    return true;
+
   sum -= arr[index];
   ds.pop_back();
-  printfSubSequence(index + 1, arr, ds, sum, n, k);
+
+  if (printfSubSequence(index + 1, arr, ds, sum, n, k) == true)
+    return true;
+
+  return false;
 }
 
 int main() {
-  vector<int> arr = {1, 2, 3};
+  vector<int> arr = {1, 2, 1};
   vector<int> ans;
   int n = arr.size();
   int k = 2;
