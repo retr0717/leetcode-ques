@@ -6,12 +6,12 @@ int main()
     int n = 16;
     int count = 0;
 
-    while(n > 1)
+    while(n != 0)
     {
-        count += (n&1);
-        n = n >> 1;
+        n = (n & (n-1));
+        count++;
     }
 
-    cout<<"No Of Set Bits : "<<++count<<endl;
+    cout<<"No Of Set Bits : "<<count<<endl;
     return 0;
 }
