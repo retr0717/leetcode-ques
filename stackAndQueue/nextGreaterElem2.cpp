@@ -24,3 +24,14 @@ public:
     return ans;
   }
 };
+
+int main() {
+  Solution s;
+  vector<int> arr = {2, 1, 4, 3};
+  vector<int> ans = s.nextGreaterElements(arr);
+
+  for (auto x : ans)
+    cout << x << " ";
+
+  return 0;
+}
