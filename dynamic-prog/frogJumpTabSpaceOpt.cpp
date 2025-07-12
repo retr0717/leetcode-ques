@@ -1,4 +1,5 @@
 #include <bits/stdc++.h> 
+using namespace std;
 
 int frogJump(int n, vector<int> &heights)
 {
