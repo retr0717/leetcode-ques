@@ -5,8 +5,8 @@ int mod =(int)1e9+7;
 
 int findWays(vector<int> &arr, int k)
 {
-        vector<vector<int> dp(n, vector<int> (k+1, -1));
-        int n = arr.size();
+    int n = arr.size();
+	vector<vector<int>> dp(n, vector<int> (k+1, -1));
 
 	if(arr[0] == 0) dp[0][0] = 2;
 	else dp[0][0] = 1;
