@@ -24,3 +24,10 @@ public:
         return dp[0][0];
     }
 };
+
+int main() {
+    Solution sol;
+    vector<int> nums = {10,9,2,5,3,7,101,18};
+    cout << "Length of Longest Increasing Subsequence: " << sol.lengthOfLIS(nums) << endl;
+    return 0;
+}

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 
 int longestIncreasingSubsequence(int arr[], int n)
 {
@@ -22,4 +23,10 @@ int longestIncreasingSubsequence(int arr[], int n)
     }
 
     return len;
+}
+int main() {
+    int arr[] = {10,9,2,5,3,7,101,18};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout << "Length of Longest Increasing Subsequence: " << longestIncreasingSubsequence(arr, n) << endl;
+    return 0;
 }

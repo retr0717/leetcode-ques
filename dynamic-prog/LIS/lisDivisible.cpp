@@ -42,3 +42,15 @@ public:
         return temp;
     }
 };
+
+int main() {
+    Solution sol;
+    vector<int> nums = {1,2,4,8};
+    vector<int> result = sol.largestDivisibleSubset(nums);
+    cout << "Largest Divisible Subset: ";
+    for(int num : result) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
+}

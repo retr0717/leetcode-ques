@@ -21,3 +21,11 @@ public:
         return f(0, -1, nums, n);
     }
 };
+
+int main()
+{
+    Solution sol;
+    vector<int> nums = {10,9,2,5,3,7,101,18};
+    cout << sol.lengthOfLIS(nums) << endl; // Output: 4
+    return 0;
+}

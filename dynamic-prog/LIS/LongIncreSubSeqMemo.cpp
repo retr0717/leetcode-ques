@@ -15,7 +15,7 @@ private:
         
         return dp[curr][prev+1] = len;
     }
-public:
+public: 
     int lengthOfLIS(vector<int>& nums) {
         int n = nums.size();
         vector<vector<int>> dp(n+1, vector<int> (n+1, -1));
@@ -23,3 +23,10 @@ public:
         return f(0, -1, nums, n, dp);
     }
 };
+
+int main() {
+    Solution sol;
+    vector<int> nums = {10,9,2,5,3,7,101,18};
+    cout << "Length of Longest Increasing Subsequence: " << sol.lengthOfLIS(nums) << endl;
+    return 0;
+}
